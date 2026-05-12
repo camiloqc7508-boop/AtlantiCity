@@ -39,7 +39,7 @@ public class LoginPage {
     }
 
     public void login(String username, String password){
-        //JavascriptExecutor js = (JavascriptExecutor) driver;
+      
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
             WebElement popup = wait.until(ExpectedConditions.elementToBeClickable(By.id("optiRealclosePopupImage")));
@@ -49,10 +49,6 @@ public class LoginPage {
         } catch (TimeoutException e) {
             System.out.println("Popup no apareció. El flujo continúa.");
         }
-        // Click botón LOGIN usando JS (NO HAY NECESIDAD, PORQUE NO REFLEJA LA FILOSOFÍA DE SELENIUM -REPRESENTAR LAS
-        // ACCIONES DE UN USUARIO FINAL-)
-        // wait.until(ExpectedConditions.visibilityOf(buttonLogin));
-        // js.executeScript("arguments[0].click();", buttonLogin);
 
         wait.until(ExpectedConditions.elementToBeClickable(buttonLogin));
         buttonLogin.click();
